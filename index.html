@@ -65,10 +65,11 @@ top:0; z-index:50;
     backdrop-filter:blur(10px);
     border-bottom:1px solid var(--line-soft);
   }
-  nav{
-    display:flex; align-items:center; justify-content:space-between;
-    padding:18px 28px; max-width:1180px; margin:0 auto;
-  }
+nav{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:18px 28px; max-width:1180px; margin:0 auto;
+  gap:16px;
+}
   .logo{
     display:flex; align-items:center; gap:10px;
     font-family:'Space Grotesk'; font-weight:700; font-size:18px; letter-spacing:-0.02em;
@@ -90,7 +91,16 @@ top:0; z-index:50;
     transition:transform .15s ease, background .15s ease;
   }
   .nav-cta:hover{background:#FFB838; transform:translateY(-1px);}
-  @media(max-width:860px){ .nav-links{display:none;} }
+@media(max-width:860px){
+  .nav-links{display:none;}
+  nav{padding:16px 20px;}
+  .logo{flex-shrink:0;}
+  .nav-cta{flex-shrink:0; margin-left:auto; white-space:nowrap;}
+}
+@media(max-width:400px){
+  .logo{font-size:15px;}
+  .nav-cta{font-size:12.5px; padding:9px 13px;}
+}
 
   /* ---------- HERO ---------- */
   .hero{padding:96px 0 70px; position:relative;}
